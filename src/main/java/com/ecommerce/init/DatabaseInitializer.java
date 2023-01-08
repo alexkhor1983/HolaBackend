@@ -47,30 +47,30 @@ public class DatabaseInitializer {
     public void init(){
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         try {
-            userRepository.save(new User("holaadmin", "ROLE_ADMIN", encoder.encode("1034tingfeng"), true, true, "imtheadmin"));
-            userRepository.save(new User("holauser", "ROLE_USER", encoder.encode("1034tingfeng"), true, true, "imtheseller"));
-            userRepository.save(new User("alexkhor1983", "ROLE_USER", encoder.encode("1034tingfeng"), true, true, "imtheuser"));
+            userRepository.save(new User("holaadmin", "ROLE_ADMIN", encoder.encode("1234holaecommerce"), true, true, "imtheadmin"));
+            userRepository.save(new User("holauser", "ROLE_USER", encoder.encode("1234holaecommerce"), true, true, "imtheseller"));
+            userRepository.save(new User("alexkhor12345", "ROLE_USER", encoder.encode("1234holaecommerce"), true, true, "imtheuser"));
 
             Profile profileAdmin = new Profile();
             profileAdmin.setUser(userRepository.findById("holaadmin").get());
-            profileAdmin.setUserPhone("01121460908");
-            profileAdmin.setUserEmail("woshilaogu8888@gmail.com");
+            profileAdmin.setUserPhone("01025478965");
+            profileAdmin.setUserEmail("holaadmin123@gmail.com");
             profileAdmin.setUserProfilePicture("");
 
             profileRepository.save(profileAdmin);
 
             Profile profileUser = new Profile();
             profileUser.setUser(userRepository.findById("holauser").get());
-            profileUser.setUserPhone("01121460908");
-            profileUser.setUserEmail("woshilaogu2001@gmail.com");
+            profileUser.setUserPhone("01025478965");
+            profileUser.setUserEmail("holauser123@gmail.com");
             profileUser.setUserProfilePicture("https://holaclothes-ecommerce-bucket.s3.ap-southeast-1.amazonaws.com/Ilv4aJt02y7kd4y1eYfH6.jpeg");
 
             profileRepository.save(profileUser);
 
             Profile profileUser1 = new Profile();
-            profileUser1.setUser(userRepository.findById("alexkhor1983").get());
-            profileUser1.setUserPhone("01121460908");
-            profileUser1.setUserEmail("khortf-pm19@student.tarc.edu.my");
+            profileUser1.setUser(userRepository.findById("alexkhor12345").get());
+            profileUser1.setUserPhone("01025478965");
+            profileUser1.setUserEmail("alexkhor12345@gmail.com");
             profileUser1.setUserProfilePicture("https://holaclothes-ecommerce-bucket.s3.ap-southeast-1.amazonaws.com/zvlmw0XoZ72NBuIVW-M8B.jpeg");
 
             profileRepository.save(profileUser1);
